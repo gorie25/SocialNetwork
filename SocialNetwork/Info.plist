@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict/>
+    </array>
+    <key>STREAM_API_KEY</key>
+    <string>$(STREAM_API_KEY)</string>
+    <key>STREAM_USER_ID</key>
+    <string>$(STREAM_USER_ID)</string>
+    <key>STREAM_USER_TOKEN</key>
+    <string>$(STREAM_USER_TOKEN)</string>
+</dict>
+</plist>
