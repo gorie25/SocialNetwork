@@ -1,6 +1,8 @@
 import Combine
 import Foundation
 
+
+@MainActor
 class ProfileViewModel:ObservableObject{
     private let feedService = FeedService.shared
     @Published var posts: [Post] = []
@@ -18,7 +20,7 @@ class ProfileViewModel:ObservableObject{
     func loadProfile() async
     {
         do {
-            try posts = await feedService.loadMyPosts()
+            posts =  try await feedService.loadMyPosts()
         } catch
         {
             ToastManager.shared.show(error.localizedDescription)
@@ -28,11 +30,21 @@ class ProfileViewModel:ObservableObject{
     func loadCurrentUser() async
     {
         do {
-            try user = await feedService.getCurrentUser()
+            user =  try await feedService.getCurrentUser()
         } catch
         {
             ToastManager.shared.show(error.localizedDescription)
-
+            
+        }
+    }
+    
+    func createPost(content: String) async {
+        do {
+            try await feedService.createPost(text: content)
+        } catch
+        {
+            ToastManager.shared.show(error.localizedDescription)
+            
         }
     }
 }

@@ -30,8 +30,8 @@
             filePath = "SocialNetwork/service/ChatService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,62 +40,48 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7D351162-434A-4042-AE3E-79A8AE48185F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialNetwork/service/ChatService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ChatService"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B72B36E7-C807-4B0F-B56C-567BA63A4F17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialNetwork/Service/ChatService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "ChatService"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "7D351162-434A-4042-AE3E-79A8AE48185F - 95ed5154f2f574e3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SocialNetwork.ChatService.__allocating_init() -&gt; SocialNetwork.ChatService"
-                  moduleName = "SocialNetwork.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tien/Desktop/iOSRoadmap/SocialNetwork/SocialNetwork/service/ChatService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "7D351162-434A-4042-AE3E-79A8AE48185F - b005aecfdf4dda34"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SocialNetwork.ChatService.() -&gt; SocialNetwork.ChatService.init() -&gt; SocialNetwork.ChatService"
-                  moduleName = "SocialNetwork.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tien/Desktop/iOSRoadmap/SocialNetwork/SocialNetwork/service/ChatService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "30B7E0D5-AE24-4849-B555-2A66FE8C74CF"
+            uuid = "9D26D103-5DD0-427C-BF6B-F0C493752F46"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocialNetwork/module/activity_feed/ui/profile/ProfileView.swift"
+            filePath = "SocialNetwork/Modules/ActivityFeeds/Home/UI /Widgets/Components/Reaction/ReactionPickerButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "init()"
-            landmarkType = "7">
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

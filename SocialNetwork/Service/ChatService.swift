@@ -6,6 +6,7 @@
 //
 import Foundation
 import StreamChat
+import Combine
 import SwiftUI
 
 class ChatService {
@@ -20,26 +21,35 @@ class ChatService {
         var config = ChatClientConfig(apiKey: .init("pbuqqsfrcybs"))
         config.isLocalStorageEnabled = true
         self.chatClient = ChatClient(config: config)
-        connectUser()
     }
     
-    private func connectUser() {
-        let token = try! Token(rawValue: AppConfig.streamUserToken)
+    func connect() async throws {
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             
-            chatClient.connectUser(
-            userInfo: .init(
-                id: AppConfig.streamApiKey,
-                name: "Luke Skywalker",
-                imageURL: URL(string: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg")!
-            ),
-            token: token
-        ) { error in
-            if let error = error {
-                log.error("connecting the user failed \(error)")
+            do {
+                let token = try Token(rawValue: AppConfig.streamUserToken)
+                
+                chatClient.connectUser(
+                    userInfo: .init(
+                        id: AppConfig.streamUserId,
+                        name: "Luke Skywalker",
+                        imageURL: URL(string: "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg")!
+                    ),
+                    token: token
+                ) { error in
+                    if let error {
+                        continuation.resume(throwing: error)
+                    } else {
+                        continuation.resume(returning: ())
+                    }
+                }
+                
+            } catch {
+                continuation.resume(throwing: error)
             }
         }
     }
-    
+
     //Chat Channel List
     func setupChannelList() {
         let query = ChannelListQuery(
