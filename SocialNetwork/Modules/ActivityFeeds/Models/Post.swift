@@ -7,6 +7,7 @@ struct Post: Identifiable, Equatable, Sendable {
     
     let id: String
     let text: String?
+    let userId: String?
     let attachments: [Attachment]
     let createdAt: Date
     let updatedAt: Date?
@@ -24,6 +25,7 @@ extension Post {
         self.init(
             id: activity.id,
             text: activity.text,
+            userId: activity.user.id,
             attachments: activity.attachments,
             createdAt: activity.createdAt,
             updatedAt: activity.editedAt,

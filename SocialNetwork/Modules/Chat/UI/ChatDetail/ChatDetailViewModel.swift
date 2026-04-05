@@ -1,10 +1,3 @@
-//
-//  ChatDetailViewModel.swift
-//  SocialNetwork
-//
-//  Created by Tien on 15/3/26.
-//
-
 import Foundation
 import OSLog
 import Combine

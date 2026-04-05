@@ -7,7 +7,7 @@ struct CreatePostBottomSheet: View {
     @State private var selectedPrivacy: Privacy = .everyone
     @State private var isPosting = false
     @FocusState private var isFocused: Bool
-    @ObservedObject var viewModel: ProfileViewModel
+    @ObservedObject var viewModel: OwnProfileViewModel
     
     private let maxCharacters = 500
     private var remaining: Int { maxCharacters - content.count }

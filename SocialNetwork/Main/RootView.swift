@@ -15,7 +15,7 @@ enum AppTab: String, CaseIterable {
         case .profile: return "person"
         }
     }
- 
+    
     var iconSelected: String {
         switch self {
         case .home:    return "house.fill"
@@ -27,34 +27,55 @@ enum AppTab: String, CaseIterable {
 }
 
 struct RootView: View {
-    @State private var  selectedTab: AppTab = .home
+    
+    @State private var selectedTab: AppTab = .home
+    @StateObject private var router = Router()
     
     var body: some View {
+        NavigationStack(path: $router.path) {
+            
             TabView(selection: $selectedTab) {
-
-                       FeedHomeView()
-                           .tag(AppTab.home)
-                           .tabItem {
-                               Label("Home", systemImage: selectedTab == .home ? "house.fill" : "house")
-                           }
-
-                        CustomChannelList()
-                           .tag(AppTab.chat)
-                           .tabItem {
-                               Label("Chat", systemImage: selectedTab == .chat ? "message.fill" : "message")
-                           }
-
-                       ProfileView()
-                           .tag(AppTab.profile)
-                           .tabItem {
-                               Label("Profile", systemImage: selectedTab == .profile ? "person.fill" : "person")
-                           }
-                   }
-                   .tint(.primary)
-                   .tableStyle(.automatic)               
+                
+                FeedHomeView()
+                    .tag(AppTab.home)
+                    .tabItem {
+                        Label("Home", systemImage: selectedTab == .home ? "house.fill" : "house")
+                    }
+                
+                CustomChannelList()
+                    .tag(AppTab.chat)
+                    .tabItem {
+                        Label("Chat", systemImage: selectedTab == .chat ? "message.fill" : "message")
+                    }
+                
+                OwnProfileView()
+                    .tag(AppTab.profile)
+                    .tabItem {
+                        Label("Profile", systemImage: selectedTab == .profile ? "person.fill" : "person")
+                    }
+            }
+            .tint(.primary)
+            
+            .navigationDestination(for: Route.self) { route in
+                
+                switch route {
+                    
+                case .chatList:
+                    CustomChannelList()
+                case .chatDetail(let id):
+                    OwnProfileView()
+                    
+                case .myProfile:
+                    OwnProfileView()
+                    
+                case .userProfile(let userId):
+                    UserProfileView(userId: userId)
+                    
+                case .activity:
+                    FeedHomeView()
+                }
+            }
         }
+        .environmentObject(router)
     }
-    
-
-
-
+}

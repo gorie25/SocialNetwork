@@ -34,7 +34,7 @@
 			path = SocialNetwork;
 			sourceTree = "<group>";
 		};
-		8484E1E52F718C7E000686EE /* Configuration */ = {
+		8448D3FA2F82E4D5007C71AE /* Configuration */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Configuration;
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 		844323D72F59F2FF003E6FF7 = {
 			isa = PBXGroup;
 			children = (
-				8484E1E52F718C7E000686EE /* Configuration */,
+				8448D3FA2F82E4D5007C71AE /* Configuration */,
 				844323E22F59F2FF003E6FF7 /* SocialNetwork */,
 				844323E12F59F2FF003E6FF7 /* Products */,
 			);
@@ -88,7 +88,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				844323E22F59F2FF003E6FF7 /* SocialNetwork */,
-				8484E1E52F718C7E000686EE /* Configuration */,
+				8448D3FA2F82E4D5007C71AE /* Configuration */,
 			);
 			name = SocialNetwork;
 			packageProductDependencies = (
@@ -160,7 +160,7 @@
 /* Begin XCBuildConfiguration section */
 		844323E92F59F301003E6FF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 8484E1E52F718C7E000686EE /* Configuration */;
+			baseConfigurationReferenceAnchor = 8448D3FA2F82E4D5007C71AE /* Configuration */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,7 +223,7 @@
 		};
 		844323EA2F59F301003E6FF7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 8484E1E52F718C7E000686EE /* Configuration */;
+			baseConfigurationReferenceAnchor = 8448D3FA2F82E4D5007C71AE /* Configuration */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,7 +278,7 @@
 		};
 		844323EC2F59F301003E6FF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 8484E1E52F718C7E000686EE /* Configuration */;
+			baseConfigurationReferenceAnchor = 8448D3FA2F82E4D5007C71AE /* Configuration */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -324,7 +324,7 @@
 		};
 		844323ED2F59F301003E6FF7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 8484E1E52F718C7E000686EE /* Configuration */;
+			baseConfigurationReferenceAnchor = 8448D3FA2F82E4D5007C71AE /* Configuration */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

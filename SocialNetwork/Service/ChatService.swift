@@ -89,7 +89,25 @@ class ChatService {
         }
     }
     
-    
+    //MARK: - GET USER
+    func getUser(id: String) async throws -> UserModel? {
+        
+        let controller = chatClient.userController(userId: id)
+        
+        try await controller.synchronize()
+        
+        guard let user = controller.user else {
+            return nil
+        }
+        
+        return UserModel(
+            id: user.id,
+            name: user.name ?? "",
+            imageURL: user.imageURL?.absoluteString,
+            originalName: user.name ?? ""
+        )
+    }
+
     
     //Chat Detail
     func loadMessages(for channel: ChannelModel) async throws -> [Message] {

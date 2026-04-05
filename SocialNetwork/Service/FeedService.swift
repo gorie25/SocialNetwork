@@ -68,7 +68,7 @@ actor FeedService {
             originalName: streamUser.originalName ?? ""
         )
     }
-    
+ 
     // MARK: - CREATE POST
     func createPost(text: String) async throws -> Post {
         guard let userFeed else { throw FeedError.notInitialized }
@@ -117,6 +117,7 @@ actor FeedService {
         let result = try await userFeed.addComment(
             request: .init(comment: text, objectId: activityId, objectType: "activity")
         )
+        print("Add comment success")
         return await Comment(from: result)
     }
     
@@ -126,14 +127,15 @@ actor FeedService {
             for: .init(objectId: activityId, objectType: "activity", depth: 1, limit: 20)
         )
         let results = try await commentList.get()
+        print("Load comment success")
         return results.map { Comment(from: $0) }
     }
     
     // MARK: - ADD REPLY
-    func addReply(parentCommentId: String, activityId: String, text: String) async throws -> Comment {
+    func addReply(parentCommentId: String, activityId: String, content: String) async throws -> Comment {
         guard let userFeed else { throw FeedError.notInitialized }
         let result = try await userFeed.addComment(
-            request: .init(comment: text, objectId: activityId, objectType: "activity", parentId: parentCommentId)
+            request: .init(comment: content, objectId: activityId, objectType: "activity", parentId: parentCommentId)
         )
         return await Comment(from: result)
     }

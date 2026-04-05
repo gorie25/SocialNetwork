@@ -3,7 +3,7 @@ import Foundation
 
 
 @MainActor
-class ProfileViewModel:ObservableObject{
+class OwnProfileViewModel:ObservableObject{
     private let feedService = FeedService.shared
     @Published var posts: [Post] = []
     @Published var user: UserModel?

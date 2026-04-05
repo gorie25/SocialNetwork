@@ -5,8 +5,11 @@ struct ActivityCard: View {
     let post: Post
     let viewModel: FeedHomeViewModel
     
-    @State private var likeAnimating: Bool = false
     @State private var likeCount: Int
+    @State private var showCommentSheet = false
+    
+    
+    @EnvironmentObject var router: Router
     
     init(post: Post, viewModel: FeedHomeViewModel) {
         self.post = post
@@ -19,11 +22,17 @@ struct ActivityCard: View {
             
             // MARK: Header
             HStack(spacing: 12) {
-                AvatarView(name: "Luke Skywalker")
-                
-                Text("Luke Skywalker")
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundColor(.primary)
+                Button {
+                    guard let userId = post.userId else { return }
+                    router.push(.userProfile(userId: userId))
+
+                } label: {
+                    AvatarView(name: "Luke Skywalker")
+                    
+                    Text("Luke Skywalker")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundColor(.primary)
+                }
                 
                 Spacer()
                 
@@ -102,7 +111,7 @@ struct ActivityCard: View {
                     .frame(height: 20)
                 
                 ActionButton(icon: "bubble.right", title: "Comment", color: .secondary) {
-                    // comment action
+                    showCommentSheet = true
                 }
                 
                 Divider()
@@ -118,7 +127,16 @@ struct ActivityCard: View {
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.07), radius: 12, x: 0, y: 4)
         .shadow(color: Color.black.opacity(0.04), radius: 2, x: 0, y: 1)
+        .sheet(isPresented: $showCommentSheet){
+            CommentView(
+                activityId: post.id
+            )
+            .presentationDetents([.fraction(0.66), .large])
+            .background(Color.white)
+        }
+        
     }
+    
 }
 
 // MARK: - AvatarView
